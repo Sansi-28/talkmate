@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const statusDiv = document.getElementById('status');
     const chatContainer = document.getElementById('chat-container');
 
-    const API_ENDPOINT = 'http://localhost:8000/process_audio';
+    const API_ENDPOINT = 'http://talkmate-n7pz.onrender.com/process_audio';
 
     let isRecording = false;
     let mediaRecorder;
