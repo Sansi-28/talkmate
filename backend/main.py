@@ -75,7 +75,7 @@ async def process_audio(audio_file: UploadFile = File(...)):
 
         # 2. Chat: Get AI reply and correction from GPT-4
         response = client.chat.completions.create(
-            model="gpt-4",
+            model="gpt-3.5-turbo-1106", # <---- THIS IS THE CHANGED LINE
             messages=[
                 {"role": "system", "content": SYSTEM_PROMPT},
                 {"role": "user", "content": user_text}
@@ -109,6 +109,10 @@ async def process_audio(audio_file: UploadFile = File(...)):
         }
 
     except Exception as e:
+        print(f"An error occurred in process_audio: {e}") # Add this line
+        print(f"Error type: {type(e)}") # Optional: also print the type of error
+        import traceback
+        traceback.print_exc() # Optional: prints the full traceback to logs
         raise HTTPException(status_code=500, detail=str(e))
 
 @app.get("/")
