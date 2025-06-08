@@ -24,7 +24,7 @@ origins = [
     "http://localhost",
     "http://localhost:5500",
     "http://127.0.0.1:5500",
-    "https://talkmate-n7pz.onrender.com",
+    "https://talkmate-frontend.onrender.com",
 ]
 
 app.add_middleware(
